@@ -14,7 +14,7 @@ def calchist_for_rgb(img, frame, num, label):
     h_c, h_r = h.shape
     area = 0
     red_area = 0
-    xy = np.argwhere(img != [0, 0, 0])
+    xy = np.argwhere(img != [0, 0, 0]) # xy中选取的是所有r！=0 and g！=0 and b！=0的像素点
     print("hhh")
     for coordinate in xy:
         i = coordinate[0]
