@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import glob
 
-path = r'/home/xplv/fenghao/demo/input_20240724/images/*.jpg'
+path = r'/home/xplv/fenghao_2/Quantification_of_Strawberry_Maturity/input_aiwei/images/*.jpg'
 files = glob.iglob(path)
 sorted_files=sorted(files)
 for file in sorted_files:
@@ -10,7 +10,7 @@ for file in sorted_files:
     h, w = img.shape[:2]
     original_img = img
     ID = file.split('/')[7].split('_')[1].split('.')[0]
-    label_path = f'/home/xplv/fenghao/demo/input_20240724/labels/label_{ID}.txt'
+    label_path = f'/home/xplv/fenghao_2/Quantification_of_Strawberry_Maturity/input_aiwei/labels/label_{ID}.txt'
     index = 0
     cls = []
     with open(label_path, 'r') as file:
@@ -56,5 +56,5 @@ for file in sorted_files:
                 label="Ripe2"
             elif cls[index] =='4':
                 label="Unripe"
-            cv2.imwrite(f'/home/xplv/fenghao/demo/polygon_crop_20240724/{label}_{ID}_{index:02d}.png',masked_img)
+            cv2.imwrite(f'/home/xplv/fenghao_2/{label}_{ID}_{index:02d}.png',masked_img)
             index += 1

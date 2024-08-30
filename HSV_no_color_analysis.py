@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import glob
 import numpy as np
+
 threshold = 80  # 区分度阈值
+
 
 
 # 计算彩色图的直方图
@@ -57,15 +59,20 @@ def calchist_for_rgb(frame, num,label):
         hsv_H[i + 31][0] = hsv_H[i]
     for i in range(0, 31):
         hsv_H[i][0] = lis[i]
-    plt.plot(hsv_H, color="r")
-    plt.plot(hsv_S, color="g")
+
+
+
+    plt.plot(hsv_H, color="r",label="H")
+    plt.plot(hsv_S, color="g",label="S")
+    plt.legend()
+    plt.title('shift_right_30')
     # plt.plot(hsv_V, color="b")
-    plt.savefig(f'/home/xplv/fenghao/demo/output_20240725_2/{label}_{num}_mean-h:{mean_h:.2f}_mean-s:{mean_s}.jpg')
+    plt.savefig(f'/home/xplv/fenghao_2/test/{label}_{num}_mean-h:{mean_h:.2f}_mean-s:{mean_s:.2f}.jpg')
     plt.close()
 
 
 if __name__ == '__main__':
-    path = r'/home/xplv/fenghao/demo/polygon_crop_aiwei/*.png'
+    path = r'/home/xplv/fenghao_2/Quantification_of_Strawberry_Maturity/polygon_crop_aiwei/*.png'
     files = glob.iglob(path)
     index = 0
     for file in files:
@@ -79,4 +86,4 @@ if __name__ == '__main__':
         # cv.imshow('frame', frame)
         # cv.waitKey(0)
         calchist_for_rgb(hsv_img, photos_num,label)  # 第一个参数改为img可以获取BGR直方图
-        cv.imwrite(f'/home/xplv/fenghao/demo/output_20240725_1/{label}_{photos_num}.jpg',img)
+        cv.imwrite(f'/home/xplv/fenghao_2/test/{label}_{photos_num}.jpg',img)

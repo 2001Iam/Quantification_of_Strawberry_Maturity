@@ -48,7 +48,7 @@ def calchist_for_rgb_fun(img, frame, num, label):
 
 
 if __name__ == '__main__':
-    path = r'/home/xplv/fenghao/demo/polygon_crop_aiwei/*.png'
+    path = r'/home/xplv/fenghao_2/Quantification_of_Strawberry_Maturity/polygon_crop_aiwei/*.png'
     files = glob.iglob(path)
     index = 0
     for file in files:
@@ -63,5 +63,5 @@ if __name__ == '__main__':
         # cv.waitKey(0)
         red_proporation = calchist_for_rgb(img, hsv_img, photos_num, label)
         cv.imwrite(
-            f'/home/xplv/fenghao/demo/output_20240725_aiwei_no_fun17/{label}_{photos_num}_red_proporation:{red_proporation:.2f}%.jpg',
+            f'/home/xplv/fenghao_2/test/{label}_{photos_num}_red_proporation:{red_proporation:.2f}%.jpg',
             img)
