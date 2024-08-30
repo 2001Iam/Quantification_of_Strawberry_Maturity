@@ -43,7 +43,18 @@ python red_proporation.py
 
 ## tools
 
+### 将草莓图像裁剪到voc数据集上
+
+首先将草莓分割出来，然后缩放，放到voc图像上
+
+```
+python Merge_disease_voc
+```
+
+
+
 ### 检查彩色叶子图像与对应的灰度图（叶子真值）能否重合
+
 ```
 python check_is_conincidence.py
 ```
