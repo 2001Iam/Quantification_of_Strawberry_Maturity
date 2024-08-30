@@ -6,7 +6,7 @@
 ├── input_aiwei/
 │   ├── images 
 │       ├── img_001.jpg
-│	├── labels
+│   ├── labels
 │       ├── labe_001.txt
 ```
 label中的txt文件内容如下（每行的第一个数字代表classs，每一行表示一个分割个体，（x,y）坐标是归一化的，交替出现）
@@ -39,7 +39,7 @@ python HSV_no_color_analysis.py
 python red_proporation.py
 ```
 - 文件名：Unripe_025_00_red_proporation:0.08% 
-- 解释：Unrip表示class；025表示ID（同一个ID表示在同一个图像中）；00表示该ID分割出来的第几个草莓；0.08%表示红色占比
+- 解释：Unripe表示class；025表示ID（同一个ID表示在同一个图像中）；00表示该ID分割出来的第几个草莓；0.08%表示红色占比
 
 ## tools
 
@@ -48,7 +48,7 @@ python red_proporation.py
 首先将草莓分割出来，然后缩放，放到voc图像上
 
 ```
-python Merge_disease_voc
+python Merge_disease_voc.py
 ```
 
 
